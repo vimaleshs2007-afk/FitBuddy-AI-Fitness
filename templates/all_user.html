@@ -1,0 +1,33 @@
+th>Weight</th>
+    <th>Goal</th>
+    <th>Intensity</th>
+    <th>Original Plan</th>
+    <th>Updated Plan</th>
+</tr>
+
+{% for user in users %}
+
+<tr>
+    <td>{{ user.user_id }}</td>
+    <td>{{ user.name }}</td>
+    <td>{{ user.age }}</td>
+    <td>{{ user.weight }}</td>
+    <td>{{ user.goal }}</td>
+    <td>{{ user.intensity }}</td>
+
+    <td>
+        <pre>{{ user.original_plan }}</pre>
+    </td>
+
+    <td>
+        <pre>{{ user.updated_plan }}</pre>
+    </td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+</body>
+</html>
+12. templates/all_users.html
