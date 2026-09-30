@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FitBuddy</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f2f2f2;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+
+        button {
+            background: #222;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>FitBuddy</h1>
+    <p>AI Fitness Plan Generator</p>
+
+    <form action="/generate-workout" method="post">
+
+        <input type="text"
+               name="name"
+               placeholder="Name"
+               required>
+
+        <input type="text"
+               name="user_id"
+               placeholder="User ID"
+               required>
+
+        <input type="number"
+               name="age"
+               placeholder="Age"
+               required>
+
+        <input type="number"
+               name="weight"
+               placeholder="Weight (kg)"
+               required>
+
+        <select name="goal" required>
+            <option value="">Select Goal</option>
+            <option value="General Wellness">
+                General Wellness
+            </option>
+            <option value="Weight Loss">
+                Weight Loss
+            </option>
+            <option value="Muscle Gain">
+                Muscle Gain
+            </option>
+            <option value="Flexibility">
+                Flexibility
+            </option>
+        </select>
+
+        <select name="intensity" required>
+            <option value="">Select Intensity</option>
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+        </select>
+
+        <button type="submit">
+            Generate Plan
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
