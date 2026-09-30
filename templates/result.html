@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FitBuddy Result</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f2f2f2;
+            padding: 30px;
+        }
+
+        .box {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+        }
+
+        pre {
+            white-space: pre-wrap;
+            background: #eee;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+        }
+
+        button {
+            padding: 12px 25px;
+            background: #222;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h1>FitBuddy Plan</h1>
+
+    <p><b>Name:</b> {{ name }}</p>
+    <p><b>Goal:</b> {{ goal }}</p>
+    <p><b>Intensity:</b> {{ intensity }}</p>
+
+    {% if message %}
+        <p><b>{{ message }}</b></p>
+    {% endif %}
+
+    <h2>7-Day Workout Plan</h2>
+
+    <pre>{{ workout_plan }}</pre>
+
+    <h2>Nutrition / Recovery Tip</h2>
+
+    <p>{{ nutrition_tip }}</p>
+
+    <hr>
+
+    <h2>Update Your Plan</h2>
+
+    <form action="/submit-feedback" method="post">
+
+        <input type="hidden"
+               name="user_id"
+               value="{{ user_id }}">
+
+        <textarea
+            name="feedback"
+            placeholder="Example: Add more cardio or more rest days"
+            required></textarea>
+
+        <br><br>
+
+        <button type="submit">
+            Update Plan
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
